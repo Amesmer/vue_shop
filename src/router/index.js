@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import home from '../components/Home.vue'
+import welcome from '../components/Welcome.vue'
+import users from '../components/user/Users.vue'
+import orders from '../components/order/Order.vue'
 
 Vue.use(VueRouter)
 
@@ -9,7 +12,16 @@ const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
-    { path: '/home', component: home }
+    {
+      path: '/home',
+      component: home,
+      redirect: '/welcome',
+      children: [
+        { path: '/welcome', component: welcome },
+        { path: '/users', component: users },
+        { path: '/orders', component: orders }
+      ]
+    }
   ]
 })
 

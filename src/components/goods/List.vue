@@ -117,7 +117,7 @@ export default {
     goaddPage() {
       this.$router.push('/goods/add')
     },
-    showEditDialog() {
+    showBox() {
     }
   }
 }

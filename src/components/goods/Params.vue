@@ -375,6 +375,7 @@ export default {
       // $nextTick  方法的作用就是当页面上元素被重新渲染之后,
       // 才会执行回调函数中的代码
       this.$nextTick(_ => {
+        console.log(this.$refs.saveTagInput)
         this.$refs.saveTagInput.$refs.input.focus()
       })
     },
